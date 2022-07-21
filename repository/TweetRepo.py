@@ -1,9 +1,10 @@
 import pickle
 import pandas as pd
+import nltk
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.tokenize import word_tokenize
-
+nltk.download('stopwords')
 
 def processTweets(tweets):
     response = {}

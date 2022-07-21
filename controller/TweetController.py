@@ -7,7 +7,7 @@ tweet_controller = Blueprint('tweet_controller', __name__)
 
 
 @tweet_controller.route('/<search_term>')
-@cross_origin(origins="https://62d968dc0caf52036adb517e--spectacular-frangipane-9ba0e2.netlify.app")
+@cross_origin(origins="https://spectacular-frangipane-9ba0e2.netlify.app")
 def demo(search_term):
     tweets = getTweets(search_term)
     return processTweets(tweets)

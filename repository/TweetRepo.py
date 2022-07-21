@@ -27,7 +27,9 @@ def processTweets(tweets):
     nb_prediction = nb_model.predict(vectorized_tweets)
     ml_response = calculateSentiment(nb_prediction)
 
-    response["word_counts"] = word_counts[0:100].to_dict()
+    word_counts_packaged = packageCounts(word_counts[0:50].to_dict())
+
+    response["word_counts"] = word_counts_packaged
     response["sentiment"] = ml_response
 
     return response
@@ -73,3 +75,13 @@ def calculateSentiment(data):
         "neutral": neutral,
         "score": sentiment_score
     }
+
+
+def packageCounts(counts):
+    to_return = []
+    key_list = list(counts.keys())
+    val_list = list(counts.values())
+    for i in range(len(counts)):
+        temp = {"value": key_list[i], "count": val_list[i]}
+        to_return.append(temp)
+    return to_return

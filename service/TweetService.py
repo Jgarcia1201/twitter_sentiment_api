@@ -11,10 +11,10 @@ access_token = os.environ.get("ACCESS_TOKEN")
 access_secret = os.environ.get("ACCESS_SECRET")
 
 api = tweepy.Client(bearer_token=token,
-                    consumer_key='2j1yUu89kx1DX8771HWuyTDEu',
-                    consumer_secret='PngwBtqoBqSGsnFu3hZHMd1MklG27ndfPKjNeLVSyUNbUryHzy',
-                    access_token='1547040810717388800-p0yFvVEofxvbxK3TrNxYrWffBe0hdK',
-                    access_token_secret='580eDdQJhSxUUiC3gi8wbS6IGulXmRN4mjcpeXeyB2u6D')
+                    consumer_key=consumer_key,
+                    consumer_secret=consumer_secret,
+                    access_token=access_token,
+                    access_token_secret=access_secret)
 
 
 def getTweets(search_term):
